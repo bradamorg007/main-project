@@ -291,22 +291,21 @@ def main():
         print("x = ", x, " y = ", y)
 
         agent.changespeed(x, y)
-        # gets pixels for every frame. greyscale and normalise
-
+        # gets pixels for every frame. greyscale and normalise THIS NEEDS ADDING TO AUTOENCODER PORT
         pixels = np.mean(pygame.surfarray.array3d(screen), axis=2) /255
         agent_pixels_x = [agent.rect.x, agent.rect.x + agent.rect.size[0]]
         agent_pixels_y = [agent.rect.y, agent.rect.y + agent.rect.size[1]]
         pixels[agent_pixels_x[0]:agent_pixels_x[1] + 1, agent_pixels_y[0]:agent_pixels_y[1] + 1] = 1.0
         pixels = pixels.swapaxes(1, 0)
 
-        print("x =", agent.rect.x," y =",agent.rect.y)
-        fig = plt.figure()
-        plt.imshow(pixels)
-        plt.colorbar()
-        plt.grid(False)
-        plt.show(block=False)
-        plt.pause(1)
-        plt.close(fig)
+        # print("x =", agent.rect.x," y =",agent.rect.y)
+        # fig = plt.figure()
+        # plt.imshow(pixels)
+        # plt.colorbar()
+        # plt.grid(False)
+        # plt.show(block=False)
+        # plt.pause(1)
+        # plt.close(fig)
 
         # --- Game Logic ---
 
